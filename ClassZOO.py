@@ -35,7 +35,7 @@ class Animal:
         print(self.name, ": pokyshal")
 
     def dosound (self):
-        print(self.name, ": isday zvyk")
+        print(self.name, ": making a sound")
 
     def play(self):
         print(self.name, ": poigraem")
