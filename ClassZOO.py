@@ -1,41 +1,60 @@
-# Описать 3 класса животных
 
-#Животное в зоопарке описывается на основе следующих параметров:
-    #Общее описание вида:
-        #Название вида (Слон, Пингвин, Тигр)
-        #Необходимый биом (Тропики, Тундра, Пустыня)
-        #Необходимая площадь на особь (10 м^2)
-        #Что кушает (Рыба, Мясо, Сено) - Один тип животного может питаться несколькими продуктами
-        #Хищник или травоядное - Отдельный параметр выделен для дальнейшего удобства
-        #Издаваемый звук (Ауф, Хрю, Рррр)
+class Kind:
+    def __init__(self, kindName, biom, s, food, hunter, sound):
+        self.kindName = kindName
+        self.biom = biom
+        self.s = s
+        self.food = food
+        self.hunter = hunter
+        self.sound = sound
 
-    #Описание конкретного животного:
-        #Имя (Петя, Симба, Матильда)
-        #Объем потребляемой в сутки еды (5кг, 0.3кг)
-        #Возраст (5, 1, 20)
+    def getSound(self):
+        print(self.sound)
 
-# Функционал животного (пока достаточно условно обозначить действие выводом в консоль):
- # Есть
- # Издать звук
- # Играть
+    def info(self):
+        print("Вид: " + self.kindName)
+        print("Биом: " + self.biom)
+        print("Площадь: " + str(self.s))
+        print("Что кушает: " + self.food)
 
-class Animal:
-    def __init__(self, name, foodVolume, age):
-       self.name = name
-       self.foodVolume = foodVolume
-       self.age = age
-       self.nameofkind = ("corova", "volk", "zebra")
-       self.biom = ("ravnina", "les", "savana")
-       self.ploshad = ("1000 м^2")
-       self.foodtype = ("trava", "miaso", "listia")
-       self.ispredator = (True, False)
-       self.sound = ("myyy", "yyyy", "fififi")
 
-    def eats (self):
-        print(self.name, ": pokyshal")
+class Animal():
 
-    def dosound (self):
-        print(self.name, ": making a sound")
+    def __init__(self, name, food_eat, age, kind):
+        self.name = name
+        self.food_eat = food_eat
+        self.age = age
+        self.kind = kind
+        self.valuer = ""
 
-    def play(self):
-        print(self.name, ": poigraem")
+    def setValuer(self, valuer):
+        self.valuer = valuer
+
+    def delValuer(self):
+        self.remove(Animal.valuer)
+
+
+    def info(self):
+        self.kind.info()
+        print("Имя: " + str(self.name))
+        print("Съел: " + str(self.food_eat))
+        if self.valuer != '':
+            print("Вольер: " + self.valuer.name)
+        else:
+            print("Вольер не определен")
+        print()
+
+    def getKindSound(self):
+        print(self.kind.sound)
+
+class Valuer():
+    def __init__(self, name, biom, s):
+        self.name = name
+        self.biom = biom
+        self.s = s
+
+    def setAnimal(self, animal):
+        animal.setValuer(self)
+
+    def delAnimal(self, animal):
+        animal.delValuer(self)
