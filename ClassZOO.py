@@ -31,7 +31,7 @@ class Animal():
         self.valuer = valuer
 
     def delValuer(self):
-        self.remove(Animal.valuer)
+        self.valuer = ""
 
 
     def info(self):

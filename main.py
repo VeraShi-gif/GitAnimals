@@ -20,7 +20,7 @@ vlr1.setAnimal(wolf1)
 vlr2.setAnimal(wolf2)
 
 # Удаляем из вольера
-#vlr1.delAnimal(wolf1)
+vlr1.delAnimal(wolf1)
 
 
 #Информация о волках
